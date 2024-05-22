@@ -1,11 +1,10 @@
-import React from 'react'
-
-function Footer() {
-  return (
-    <Footer className="h-20 bg-gray w-full " >
-        Vedant
-    </Footer>
+function Footer(){
+  return(
+    <>
+      <footer className="h-10 bg-gray-800 text-white">
+            Vedant
+      </footer>
+    </>
   )
 }
-
 export default Footer;

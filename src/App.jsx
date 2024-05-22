@@ -1,5 +1,4 @@
-import Footer from "./components/Footer"
-
+import Footer from "./components/Footer.jsx"
 
 function App() {
   
