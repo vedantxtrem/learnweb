@@ -31,7 +31,7 @@ function HomeLayout({ children }) {
 
     function handleLogout  (e){
         e.preventDefault();
-        
+
         // const res = await dispatch(logout());
 
         // navigate('/')
@@ -51,11 +51,10 @@ function HomeLayout({ children }) {
                         />
                     </label>
                 </div>
-                <div className="drawer-side w-0
-                ">
+                <div className="drawer-side w-0 ">
                     <label htmlFor="my-drawer" className="drawer-overlay"></label>
 
-                    <ul className="menu p-4 w-48 sm:w-80 relative bg-base-300 text-base-content">
+                    <ul className="menu p-4 w-48 h-full sm:w-80 relative bg-base-300 text-base-content">
 
 
                         {/* Sidebar content here */}
@@ -85,41 +84,30 @@ function HomeLayout({ children }) {
                             <Link to="/about" >About</Link>
                         </li>
                         {!isLoggedIn && (
-                            <li className='absolute bottom-4 w-[90%]'>
+                            <li className='absolute bottom-6 w-[90%]'>
                             <div className='w-full flex items-center justify-center'>
-                                <button className='btn-primary bg-pink-600 px-4 py-1 font-semibold rounded-md w-full'>
+                                <button className='btn-primary bg-blue-800 px-4 py-2 font-semibold rounded-md w-full'>
                                     <Link to="/login">Login</Link>
                                 </button>
-                                <button className='btn-primary  bg-yellow-300 px-4 py-1 font-semibold rounded-md w-full'>
+                                <button className='btn-primary  bg-pink-600 px-4 py-2 font-semibold rounded-md w-full'>
                                     <Link to="/Signup">Signup</Link>
                                 </button>
                             </div>
                             </li>
                         )}
                         {isLoggedIn && (
-                            <li className='absolute bottom-4 w-[90%]'>
+                            <li className='absolute bottom-6 w-[90%]'>
                             <div className='w-full flex items-center justify-center'>
-                                <button className='btn-primary bg-pink-600 px-4 py-1 font-semibold rounded-md w-full'>
+                                <button className='btn-primary bg-blue-800 px-4 py-2 font-semibold rounded-md w-full'>
                                     <Link to="/user/profile">Profile</Link>
                                 </button>
-                                <button className='btn-primary  bg-yellow-300 px-4 py-1 font-semibold rounded-md w-full'>
+                                <button className='btn-primary  bg-pink-600 px-4 py-2 font-semibold rounded-md w-full'>
                                     <Link onClick={handleLogout}>Logout</Link>
                                 </button>
                             </div>
                             </li>
                         )}
-                        {!isLoggedIn && (
-                            <li className='absolute bottom-4 w-[90%]'>
-                            <div className='w-full flex items-center justify-center'>
-                                <button className='btn-primary bg-pink-600 px-4 py-1 font-semibold rounded-md w-full'>
-                                    <Link to="/login">Login</Link>
-                                </button>
-                                <button className='btn-primary  bg-yellow-300 px-4 py-1 font-semibold rounded-md w-full'>
-                                    <Link to="/Signup">Signup</Link>
-                                </button>
-                            </div>
-                            </li>
-                        )}
+                        
                     </ul>
                 </div>
             </div>
