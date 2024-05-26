@@ -1,9 +1,11 @@
 import React from 'react'
 import HomeLayout from '../Layouts/HomeLayout'
-import { Link } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import HomePageImage from '../assets/homePageMainImage.png'
 
 function HomePage() {
+
+
   return (
     <HomeLayout>
         <div className='pt-10 text-white flex items-center justify-center gap-10 mx-16 h-[90vh] ' >
