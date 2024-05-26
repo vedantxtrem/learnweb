@@ -3,6 +3,7 @@ import HomeLayout from "./Layouts/HomeLayout.jsx"
 import Footer from "./components/Footer.jsx"
 import HomePage from "./Pages/HomePage.jsx"
 import Aboutus from "./Pages/Aboutus.jsx"
+import NotFound from "./Pages/NotFound.jsx"
 
 function App() {
   
@@ -11,6 +12,9 @@ function App() {
       <Routes>
         <Route path="/" element={ <HomePage/> } />
         <Route path="/about" element={ <Aboutus/>} />
+
+        <Route path="*" element={ <NotFound/>} />
+
         
       </Routes>
     </>
