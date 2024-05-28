@@ -6,6 +6,7 @@ import Aboutus from "./Pages/Aboutus.jsx"
 import NotFound from "./Pages/NotFound.jsx"
 import Signup from "./Pages/Signup.jsx"
 import Login from "./Pages/Login.jsx"
+import CourseList from "./Pages/Course/CourseList.jsx"
 
 function App() {
   
@@ -16,6 +17,9 @@ function App() {
         <Route path="/about" element={ <Aboutus/>} />
         <Route path="/Signup" element={ <Signup/>} />
         <Route path="/login" element={ <Login/>} />
+
+        <Route path="/courses" element={ <CourseList/>} courses/>
+
 
         <Route path="*" element={ <NotFound/>} />
 
