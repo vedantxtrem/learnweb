@@ -30,7 +30,7 @@ function Profile() {
                     <Link to="/changepassword" className="w-1/2 p-1   rounded-md text-center font-semibold cursor-pointer bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300 ">
                         ChangePassword  
                     </Link>
-                    <Link to="/changepassword" className="w-1/2 p-1  rounded-md text-center font-semibold cursor-pointer bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300 ">
+                    <Link to="/user/editprofile" className="w-1/2 p-1  rounded-md text-center font-semibold cursor-pointer bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300 ">
                         Edit Profile  
                     </Link>
                 </div>
