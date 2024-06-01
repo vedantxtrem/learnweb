@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import HomeLayout from '../../Layouts/HomeLayout';
 import { useSelector } from 'react-redux';
 
@@ -10,6 +10,8 @@ function CourseDescription() {
   }, []);
 
   const { role , data}= useSelector((s)=> s.auth)
+
+  const Navigate = useNavigate();
 
   return (
     <HomeLayout>
@@ -52,12 +54,12 @@ function CourseDescription() {
             </p>
             <p>{state?.description}</p>
             {
-                role == "ADMIN"|| data?.subscription?.status == "ACTIVE" ? (
+                 data?.subscription?.status == "created" ? (
                   <button className='bg-yellow-600 text-xl rounded-xl font-bold px-5 py-2 w-full hover:bg-yellow-500 transition-all ease-in-out duration-200'>
                     watch lectures
                   </button>
                 ):(
-                  <button className='bg-yellow-600 text-xl rounded-xl font-bold px-5 py-2 w-full hover:bg-yellow-500 transition-all ease-in-out duration-200'>
+                  <button onClick={()=> Navigate('/checkout')} className='bg-yellow-600 text-xl rounded-xl font-bold px-5 py-2 w-full hover:bg-yellow-500 transition-all ease-in-out duration-200'>
                     Subscribe
                   </button>
                 )
@@ -69,4 +71,4 @@ function CourseDescription() {
   )
 }
 
-export default CourseDescription
+export default CourseDescription;

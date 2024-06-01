@@ -24,7 +24,7 @@ function Profile() {
                     
                     <p className='text-center'>Role : </p><p>{userData?.role}</p>
 
-                    <p className='text-center'>Subscription : </p><p>{userData?.subscription?.status == "active"? "Active":"Inactive"}</p>   
+                    <p className='text-center'>Subscription : </p><p>{userData?.subscription?.status == "created"? "Active":"Inactive"}</p>   
                 </div>
                 <div className="flex justify-center items-center gap-2  ">
                     <Link to="/changepassword" className="w-1/2 p-1   rounded-md text-center font-semibold cursor-pointer bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300 ">
@@ -35,7 +35,7 @@ function Profile() {
                     </Link>
                 </div>
                 {
-                    userData?.subscription?.status === "active" && (
+                    userData?.subscription?.status === "created" && (
                         <button className='w-full text-white bg-red-700 hover:bg-red-500 transition-all ease-in-out duration-300'>
                             Cancel Subscription
                         </button>
