@@ -27,16 +27,16 @@ function Profile() {
                     <p className='text-center'>Subscription : </p><p>{userData?.subscription?.status == "active"? "Active":"Inactive"}</p>   
                 </div>
                 <div className="flex justify-center items-center gap-2  ">
-                    <Link to="/changepassword" className="w-1/2 p-1   rounded-md text-center font-semibold cursor-pointer bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300 ">
+                    <Link to="/changepassword" className="w-1/2 p-2   rounded-md text-center font-semibold cursor-pointer bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300 ">
                         ChangePassword  
                     </Link>
-                    <Link to="/user/editprofile" className="w-1/2 p-1  rounded-md text-center font-semibold cursor-pointer bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300 ">
+                    <Link to="/user/editprofile" className="w-1/2 p-2  rounded-md text-center font-semibold cursor-pointer bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300 ">
                         Edit Profile  
                     </Link>
                 </div>
                 {
                     userData?.subscription?.status === "active" && (
-                        <button className='w-full text-white bg-red-700 hover:bg-red-500 transition-all ease-in-out duration-300'>
+                        <button className='w-full text-white bg-red-700 p-2 rounded-md hover:bg-red-500 transition-all ease-in-out duration-300'>
                             Cancel Subscription
                         </button>
                     )
