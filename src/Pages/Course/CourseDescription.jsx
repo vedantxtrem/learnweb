@@ -54,7 +54,7 @@ function CourseDescription() {
             </p>
             <p>{state?.description}</p>
             {
-              data?.subscription?.status == "active" ? (
+              data?.subscription?.status == "active" || data?.role == "ADMIN" ? (
                 <button onClick={() => Navigate('/course/lecture', { state: { ...state } })} className='bg-yellow-600 text-xl rounded-xl font-bold px-5 py-2 w-full hover:bg-yellow-500 transition-all ease-in-out duration-200'>
                   watch lectures
                 </button>

@@ -6,17 +6,19 @@ import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import HomeLayout from '../../Layouts/HomeLayout'
+import { addCourseLectures } from '../../Redux/Slice/LectureSlice';
 
     
 function Addlecture() {
 
     const courseDetails = useLocation().state;
+    
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const [userInput, setUserInput] = useState({
-        id: courseDetails._id,
-        lecture: undefined,
+        id: courseDetails?._id,
+        lectures: undefined,
         title: "",
         description: "",
         videoSrc: ""
@@ -36,23 +38,23 @@ function Addlecture() {
         console.log(source);
         setUserInput({
             ...userInput,
-            lecture: video,
+            lectures: video,
             videoSrc: source
         })
     }
 
     async function onFormSubmit(e) {
         e.preventDefault();
-        if(!userInput.lecture || !userInput.title || !userInput.description) {
+        if(!userInput.lectures || !userInput.title || !userInput.description) {
             toast.error("All fields are mandatory")
             return;
         }
-        const response = await dispatch(addCourseLecture(userInput));
+        const response = await dispatch(addCourseLectures(userInput));
         if(response?.payload?.success) {
             navigate(-1);
             setUserInput({
-                id: courseDetails._id,
-                lecture: undefined,
+                id: courseDetails?._id,
+                lectures: undefined,
                 title: "",
                 description: "",
                 videoSrc: ""
@@ -64,9 +66,8 @@ function Addlecture() {
         if(!courseDetails) navigate("/courses");
     }, [])
 
-    
-  return (
-    <HomeLayout>
+    return (
+        <HomeLayout>
             <div className="min-h-[90vh] text-white flex flex-col items-center justify-center gap-10 mx-16">
                 <div className="flex flex-col gap-5 p-2 shadow-[0_0_10px_black] w-96 rounded-lg">
                     <header className="flex items-center justify-center relative">
@@ -92,14 +93,16 @@ function Addlecture() {
                             className="bg-transparent px-3 py-1 border"
                             value={userInput.title}
                         />
-                        <textarea 
-                            type="text"
-                            name="description"
-                            placeholder="enter the description of the lecture"
-                            onChange={handleInputChange}
-                            className="bg-transparent px-3 py-1 border resize-none overflow-y-scroll h-36"
-                            value={userInput.description}
-                        />
+                         <textarea
+                                    required
+                                    type="text"
+                                    name="description"
+                                    id="description"
+                                    placeholder="Enter course description"
+                                    className="bg-transparent px-3 py-1 border"
+                                    value={userInput.description}
+                                    onChange={handleInputChange}
+                                />
                         {userInput.videoSrc ? (
                             <video 
                                 muted
@@ -124,7 +127,7 @@ function Addlecture() {
                 </div>
             </div>  
         </HomeLayout>
-  )
+    )
 }
 
 export default Addlecture

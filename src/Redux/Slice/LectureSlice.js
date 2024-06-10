@@ -23,9 +23,12 @@ export const getCourseLectures = createAsyncThunk('/course/lecture/get',async (c
 export const addCourseLectures = createAsyncThunk('/course/lecture/add',async (data)=>{
     try {
         const formData = new FormData();
-        formData.append("lecture", data.lectures);
+
+        formData.append("lectures", data.lectures);
         formData.append("title",data.title);
-        formData.append("description",data.discription);
+        formData.append("description",data.description);
+
+        console.log("data :",data);
 
         const response = axiosInstance.post(`/courses/${data.id}`,formData);
         toast.promise(response,{
@@ -41,7 +44,7 @@ export const addCourseLectures = createAsyncThunk('/course/lecture/add',async (d
 
 export const deleteCourseLectures = createAsyncThunk('/course/lecture/delete',async (data)=>{
     try {
-        const response = axiosInstance.delete(`/courses?courseId=${data.courseId}&lectureID=${data.lectureID}`);
+        const response = axiosInstance.delete(`/courses?courseId=${data.courseId}&lectureId=${data.lectureID}`);
         toast.promise(response,{
             loading : "deleting the course lectures",
             success : "lectures deleted successfully",
