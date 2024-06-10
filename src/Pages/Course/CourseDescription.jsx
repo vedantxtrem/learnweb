@@ -6,10 +6,10 @@ import { useSelector } from 'react-redux';
 function CourseDescription() {
   const { state } = useLocation();
   useEffect(() => {
-   
+
   }, []);
 
-  const { role , data}= useSelector((s)=> s.auth)
+  const { role, data } = useSelector((s) => s.auth)
 
   const Navigate = useNavigate();
 
@@ -41,7 +41,7 @@ function CourseDescription() {
                 </p>
 
               </div>
-              
+
             </div>
 
           </div>
@@ -54,16 +54,16 @@ function CourseDescription() {
             </p>
             <p>{state?.description}</p>
             {
-                 data?.subscription?.status == "active" ? (
-                  <button className='bg-yellow-600 text-xl rounded-xl font-bold px-5 py-2 w-full hover:bg-yellow-500 transition-all ease-in-out duration-200'>
-                    watch lectures
-                  </button>
-                ):(
-                  <button onClick={()=> Navigate('/checkout')} className='bg-yellow-600 text-xl rounded-xl font-bold px-5 py-2 w-full hover:bg-yellow-500 transition-all ease-in-out duration-200'>
-                    Subscribe
-                  </button>
-                )
-              }
+              data?.subscription?.status == "active" ? (
+                <button onClick={() => Navigate('/course/lecture', { state: { ...state } })} className='bg-yellow-600 text-xl rounded-xl font-bold px-5 py-2 w-full hover:bg-yellow-500 transition-all ease-in-out duration-200'>
+                  watch lectures
+                </button>
+              ) : (
+                <button onClick={() => Navigate('/checkout')} className='bg-yellow-600 text-xl rounded-xl font-bold px-5 py-2 w-full hover:bg-yellow-500 transition-all ease-in-out duration-200'>
+                  Subscribe
+                </button>
+              )
+            }
           </div>
         </div>
       </div>
