@@ -18,6 +18,7 @@ import Checkout from "./Pages/Payment/Checkout.jsx"
 import CheckoutSuccess from "./Pages/Payment/CheckoutSuccess.jsx"
 import CheckoutFailure from "./Pages/Payment/CheckoutFailure.jsx"
 import Displaylectures from "./Pages/Dashboard/Displaylectures.jsx"
+import Addlecture from "./Pages/Dashboard/Addlecture.jsx"
 
 function App() {
   
@@ -53,6 +54,7 @@ function App() {
         <Route path="*" element={ <NotFound/>} />
 
         <Route path="/course/lecture" element={<Displaylectures/>}/>
+        <Route path="/course/addlecture" element={<Addlecture/>}/>
         
       </Routes>
     </>
