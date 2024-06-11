@@ -57,11 +57,6 @@ function App() {
         <Route path="*" element={ <NotFound/>} />
 
         <Route path="/course/lecture" element={<Displaylectures/>}/>
-        
-
-
-        
-        
 
       </Routes>
     </>
