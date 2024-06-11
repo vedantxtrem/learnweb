@@ -6,7 +6,7 @@ const initialState = {
     key: "",
     subscription_id: " ",
     isPaymentVerified: false,
-    allPayments: {},
+    allPayments: [],
     finalMonths: {},
     monthlySalesRecord: []
 }
@@ -53,6 +53,7 @@ export const getPaymentRecord = createAsyncThunk("/payments/record", async () =>
             },
             error: "Failed to gt payment record"
         })
+        console.log((await response));
         return (await response).data;
     } catch (error) {
         toast.error("Operation failed");
@@ -74,8 +75,6 @@ export const cancelCourseBundle = createAsyncThunk("/payments/cancel", async () 
         toast.error("Operation failed");
     }
 })
-
-
 
 const razorpaySlice = createSlice({
     name: 'razorpay',
