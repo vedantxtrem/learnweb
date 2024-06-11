@@ -7,5 +7,5 @@ export default defineConfig({
     port: 3005, 
   },
   plugins: [react()],
-  base : '/learnweb/'
+  base : '/'
 })
