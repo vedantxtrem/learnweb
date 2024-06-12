@@ -84,7 +84,7 @@ function Checkout() {
             </span>
             All the Existing and new launched courses will be also available
             <p className='flex items-center text-center justify-center text-yellow-500 font-bold text-4xl'>
-              <BiRupee/> <span className='pr-2'> 5 </span> only
+              <BiRupee/> <span className='pr-2'> 99 </span> only
             </p>
             <div>
               <p className='text-xl'>100% refundale on cancellation </p>
