@@ -49,7 +49,7 @@ function CourseDescription() {
             <h1 className='text-yellow-500 text-3xl mb-5 text-center font-bold'>
               {state?.title}
             </h1>
-            <p className="text-yellow-500 sm:w-full sm:text-center ">
+            <p className="text-yellow-500 w-full ">
               Course description :
             </p>
             <p>{state?.description}</p>
