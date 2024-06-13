@@ -22,7 +22,7 @@ function AdminDashboard() {
     const navigate = useNavigate();
 
     const { allUsersCount, subscribedCount } = useSelector((state) => state.stat);
-    const { allPayments=[...data], monthlySalesRecord =[]} = useSelector((state) => state?.razorpay);
+    const { allPayments = [...data], monthlySalesRecord = [] } = useSelector((state) => state?.razorpay);
 
     const userData = {
         labels: ["Registered User", "Enrolled User"],
@@ -72,21 +72,24 @@ function AdminDashboard() {
 
     return (
         <HomeLayout>
-            <div className="min-h-[90vh] pt-5 flex flex-col flex-wrap gap-10 text-white">
-                <h1 className="text-center text-5xl font-semibold text-yellow-500">
+            <div className="w-full  min-h-[90vh] pt-4 flex flex-col justify-center  gap-10 text-white">
+
+                <h1 className="text-center text-3xl md:text-5xl font-semibold text-yellow-500">
                     Admin Dashboard
                 </h1>
 
-                <div className="grid grid-cols-2 gap-5 m-auto mx-10">
-                    <div className="flex flex-col items-center gap-10 p-5 shadow-lg rounded-md">
-                        <div className="w-80 h-80">
+                <div className=" md:grid md:grid-cols-2 md:gap-5 m-auto mx-10">
+
+                    <div className="flex flex-col items-center gap-10 p-5 shadow-lg rounded-md ">
+
+                        <div className="md:w-80 md:h-80">
                             <Pie data={userData} />
                         </div>
 
                         <div className="grid grid-cols-2 gap-5">
                             <div className="flex items-center justify-between p-5 gap-5 rounded-md shadow-md">
                                 <div className="flex flex-col items-center">
-                                    <p className="font-semibold">Registered Users</p>
+                                    <p className="font-semibold sm:text-sm">Registered Users</p>
                                     <h3 className="text-4xl font-bold">{allUsersCount}</h3>
                                 </div>
                                 <FaUsers className="text-yellow-500 text-5xl" />
@@ -125,62 +128,63 @@ function AdminDashboard() {
                     </div>
                 </div>
 
-                <div className="mx-[10%] w-[80%] self-center flex flex-col items-center justify-center gap-10 mb-10">
-                    <div className="flex w-full items-center justify-between">
-                        <h1 className="text-center text-3xl font-semibold">
-                            Courses overview
+                <div className="sm:w-full mx-auto w-[90%] self-center flex flex-col items-center justify-center flex-wrap gap-10 mb-10">
+                    <div className="flex flex-col md:flex-row w-full  items-center justify-between md:px-20">
+                        <h1 className="text-center text-3xl font-semibold w-full sm:w-auto">
+                            Courses Overview
                         </h1>
 
                         <button
                             onClick={() => {
-                                navigate("/course/create")
+                                navigate("/course/create");
                             }}
-                            className="w-fit bg-yellow-500 hover:bg-yellow-600 transition-all ease-in-out duration-300 rounded py-2 px-4 font-semibold text-lg cursor-pointer"
+                            className="mt-4 sm:mt-0 w-fit bg-yellow-500 hover:bg-yellow-600 transition-all ease-in-out duration-300 rounded py-2 px-4 font-semibold text-lg cursor-pointer"
                         >
-                            Create new course
+                            Create New Course
                         </button>
                     </div>
 
-                    <table className="table overflow-x-scroll">
-                        <thead>
-                            <tr>
-                                <th>S No</th>
-                                <th>Course Title</th>
-                                <th>Course Category</th>
-                                <th>Instructor</th>
-                                <th>Total Lectures</th>
-                                <th>Description</th>
-                                <th>Actions</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {myCourses?.map((course, idx) => {
-                                return (
+                    <div className="overflow-x-auto w-full ">
+                        <table className="table-auto w-full text-center">
+                            <thead>
+                                <tr>
+                                    <th>S No</th>
+                                    <th>Course Title</th>
+                                    <th className="hidden md:table-cell">Course Category</th>
+                                    <th className="hidden md:table-cell">Instructor</th>
+                                    <th className="hidden md:table-cell">Total Lectures</th>
+                                    <th className="hidden md:table-cell">Description</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody >
+                                {myCourses?.map((course, idx) => (
                                     <tr key={course._id}>
                                         <td>{idx + 1}</td>
                                         <td>
-                                            <textarea readOnly value={course?.title} className="w-40 h-auto bg-transparent resize-none"></textarea>
+                                            <textarea
+                                                readOnly
+                                                value={course?.title}
+                                                className="w-36 h-auto bg-transparent resize-none overflow-x-scroll"
+                                            />
                                         </td>
-                                        <td>
+                                        <td className="hidden md:table-cell">
                                             {course?.category}
                                         </td>
-                                        <td>
+                                        <td className="hidden md:table-cell">
                                             {course?.createdBy}
                                         </td>
-                                        <td>
+                                        <td className="hidden md:table-cell">
                                             {course?.numbersOfLectures}
                                         </td>
-                                        <td className="max-w-28 overflow-hidden text-ellipsis whitespace-nowrap">
+                                        <td className="max-w-28 overflow-hidden text-ellipsis whitespace-nowrap hidden md:table-cell">
                                             <textarea
                                                 value={course?.description}
                                                 readOnly
                                                 className="w-80 h-auto bg-transparent resize-none"
-                                            >
-
-                                            </textarea>
+                                            />
                                         </td>
-                                        <td className="flex items-center gap-4">
+                                        <td className="flex justify-center items-center gap-4">
                                             <button
                                                 className="bg-green-500 hover:bg-green-600 transition-all ease-in-out duration-300 text-xl py-2 px-4 rounded-md font-bold"
                                                 onClick={() => navigate("/course/lecture", { state: { ...course } })}
@@ -195,11 +199,12 @@ function AdminDashboard() {
                                             </button>
                                         </td>
                                     </tr>
-                                )
-                            })}
-                        </tbody>
-                    </table>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
+
             </div>
         </HomeLayout>
     );
