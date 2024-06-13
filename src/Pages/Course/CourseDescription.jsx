@@ -16,10 +16,10 @@ function CourseDescription() {
   return (
     <HomeLayout>
       <div className="min-h-[90vh] pt-12 flex flex-col items-center justify-center text-white">
-        <div className="grid grid-cols-2 gap-10 py-10 relative">
+        <div className="md:grid md:grid-cols-2 gap-10 p-4 py-10 relative">
           <div className='space-y-5'>
             <img
-              className='w-full h-64'
+              className='w-full h-64 rounded-md'
               alt="thumbnail"
               src={state?.thumbnail?.secure_url}
             />
@@ -49,7 +49,7 @@ function CourseDescription() {
             <h1 className='text-yellow-500 text-3xl mb-5 text-center font-bold'>
               {state?.title}
             </h1>
-            <p className="text-yellow-500">
+            <p className="text-yellow-500 w-full ">
               Course description :
             </p>
             <p>{state?.description}</p>
