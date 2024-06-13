@@ -10,13 +10,13 @@ import steveJobs from '../assets/steveJobs.png'
 function Aboutus() {
     return (
         <HomeLayout>
-            <div className='pl-20 pt-20 flex flex-col text-white'>
-                <div className='flex justify-around gap-5 mx-10  items-center'>
-                    <section className='w-1/2 space-y-10'>
-                        <h1 className='text-5xl text-yellow-500 font-semibold '>
+            <div className='p-5 md:pl-20 pt-20 flex flex-col text-white justify-center items-center'>
+                <div className='flex flex-col md:flex-row justify-center  gap-5  md:mx-10  items-center'>
+                    <section className='w-full md:w-1/2 space-y-10'>
+                        <h1 className='text-3xl w-full text-center  md:text-5xl text-yellow-500 font-semibold '>
                             Affordale and Quality Education
                         </h1>
-                        <p className='text-xl text-gray-300'>
+                        <p className='text-xl text-gray-300 w-full text-center'>
                             Our goal is to provide the afordable and Quality Education to the world .
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio perspiciatis nihil
                             optio exercitationem sunt? Accusantium officiis obcaecati commodi nulla, natus amet
@@ -34,13 +34,13 @@ function Aboutus() {
                     </div>
                 </div>
 
-                <div className="carousel m-auto w-1/2 my-16">
+                <div className="carousel m-2 w-full md:w-1/2 my-16">
                     <div id="slide1" className="carousel-item relative w-full">
                         <div className='flex flex-col items-center justify-center gap-4 px-[15%] w-full'>
                             <img className="w-40 rounded-full border-2 border-gray-400" src={apj}  />
                             
                             <h1 className='text-2xl text-yellow-400 '>A.P.J.Abdul Kalam</h1>
-                            <p className='text-xl text-gray-200'>
+                            <p className='text-xl text-gray-200 w-full text-center' >
                                 "Small aim is crime , have great aim"
                             </p>
 
@@ -54,7 +54,7 @@ function Aboutus() {
                         <div className='flex flex-col items-center justify-center gap-4 px-[15%] w-full'>
                             <img className="w-40 rounded-full border-2 border-gray-400" src={billGates}  />
                             <h1 className='text-2xl text-yellow-400 '>Bill Gates</h1>
-                            <p className='text-xl text-gray-200'>
+                            <p className='text-xl text-gray-200 w-full text-center'>
                                 "Patience is a key element of success."
                             </p>
 
@@ -68,7 +68,7 @@ function Aboutus() {
                         <div className='flex flex-col items-center justify-center gap-4 px-[15%] w-full' >
                             <img className="w-40 rounded-full border-2 border-gray-400" src={einstein}  />
                             <h1 className='text-2xl text-yellow-400 '>Sir Einstein</h1>
-                            <p className='text-xl text-gray-200'>
+                            <p className='text-xl text-gray-200 w-full text-center'>
                                 "The true sign of intelligence is not knowledge but imagination."
                             </p>
 
@@ -83,7 +83,7 @@ function Aboutus() {
                             <img className="w-40 rounded-full border-2 border-gray-400" src={nelsonMandela}  />
 
                             <h1 className='text-2xl text-yellow-400 '>Nalson Mandela</h1>
-                            <p className='text-xl text-gray-200'>
+                            <p className='text-xl text-gray-200 w-full text-center'>
                                 "Education is the most powerfull tool you can Change the World"
                             </p>
 
@@ -97,7 +97,7 @@ function Aboutus() {
                         <div className='flex flex-col items-center justify-center gap-4 px-[15%] w-full'>
                             <img className="w-40 rounded-full border-2 border-gray-400" src={steveJobs}/>
                             <h1 className='text-2xl text-yellow-400 '>Steve Jobs</h1>
-                            <p className='text-xl text-gray-200'>
+                            <p className='text-xl text-gray-200 w-full text-center'>
                                 "Don’t let the noise of others’ opinions drown out your own inner voice."
                             </p>
 
