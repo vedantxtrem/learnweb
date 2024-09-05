@@ -39,7 +39,7 @@ function CreateCourse() {
         const { name, value } = e.target;
         setUserInput({
             ...userInput,
-            [name]: value
+            [name] : value
         })
     }
 
@@ -52,6 +52,7 @@ function CreateCourse() {
         }
 
         const response = await dispatch(createNewCourse(userInput));
+        
         if (response?.payload?.success) {
             setUserInput({
                 title: "",
@@ -93,7 +94,7 @@ function CreateCourse() {
                                         />
                                     ) : (
                                         <div className="w-full h-44 m-auto flex items-center justify-center border rounded-md">
-                                            <h1 className="font-bold text-lg text-yellow-600">Upload your course thumbnail</h1>
+                                            <h1 className="font-bold text-lg text-yellow-600"> Upload your course thumbnail </h1>
                                         </div>
                                     )}
 

@@ -8,6 +8,7 @@ const initialState = {
 
 export const getAllCourses = createAsyncThunk("/course/get", async () => {
     try {
+
         const response = axiosInstance.get("/courses");
 
         toast.promise(response, {
@@ -24,6 +25,9 @@ export const getAllCourses = createAsyncThunk("/course/get", async () => {
 
 export const createNewCourse = createAsyncThunk("/course/create", async (data) => {
     try {
+
+        
+
         let formData = new FormData();
         formData.append("title", data?.title);
         formData.append("description", data?.description);
@@ -33,6 +37,7 @@ export const createNewCourse = createAsyncThunk("/course/create", async (data) =
 
         
         const response = axiosInstance.post("/courses", formData);
+
         toast.promise(response, {
             loading: "Creating new course",
             success: "Course created successfully",

@@ -44,7 +44,7 @@ function HomePage() {
                 </div> */}
                 <div class="h-full w-full md:pt-24 flex flex-wrap">
                     <div
-                        class="text-center px-4 w-full lg:h-[230px] md:px-2 lg:px-20 md:text-left md:w-6/12 md:flex md:flex-col md:justify-between">
+                        class="text-center px-4 w-full h-fit lg:h-[230px] md:px-2 lg:px-20 md:text-left md:w-6/12 md:flex md:flex-col md:justify-between">
                         <h3 class="text-3xl md:text-4xl text-white mt-[10%] font-bold">
                             Find out best Courses..
                             <span class="block text-yellow-500 animate-pulse font-bold">Online platform..</span>
@@ -64,11 +64,11 @@ function HomePage() {
                                 </button>
                             </Link>
                         </div>
-                        <div class="w-full h-full md:hidden  md:w-1/2 items-center justify-center">
+                        <div class="w-full h-fit md:hidden  md:w-1/2 items-center justify-center">
                             <img src={HomePageImage} alt="homepage image " />
                         </div>
                     </div>
-                    <div class="w-full h-full hidden md:block md:w-1/2 items-center justify-center">
+                    <div class="w-full h-full hidden md:block md:w-1/2  items-center justify-center">
                         <img src={HomePageImage} alt="homepage image " />
                     </div>
                 </div>

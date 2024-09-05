@@ -119,6 +119,7 @@ function HomeLayout({ children }) {
             </div>
 
             {/*  children */}
+            
             {children}
 
             <Footer/>
@@ -126,4 +127,4 @@ function HomeLayout({ children }) {
     )
 }
 
-export default HomeLayout
+export default HomeLayout;

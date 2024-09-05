@@ -1,12 +1,23 @@
+
+const daisyui = require('daisyui');
+const lineClamp = require('@tailwindcss/line-clamp');
+
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        
+      },
+      keyframes: {
+        
+      },
+    },
   },
-  plugins: [require('daisyui'),require('@tailwindcss/line-clamp')],
+  plugins: [daisyui, lineClamp],
 }
 
